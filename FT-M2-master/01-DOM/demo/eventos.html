@@ -18,14 +18,26 @@
   <div id='uno'>Uno</div>
   <div id='dos'>Dos</div>
   <div id='tres'>Tres</div>
+  <button id='add'>ADD</button>
 
   <script type="text/javascript">
     var arreglo = [1, 2, 3]
-    var divs = document.querySelectorAll('div');
-    var div = document.getElementById('uno');
+    var divs = document.querySelectorAll('div');//[div1, div2, div3]
+    var div = document.getElementById('uno');//div con id uno
+
+    // for(var i = 0; i<divs.length;i++){
+    //   divs[i].addEventListener('click', function(e){
+    //     //alert('CLICKEASTE: ')
+    //     //console.log(e)
+    //     //alert('clickeaste ' +e.target.innerHTML ) tambien puede haber innerText donde solo se enfoca en el contenido
+    //   })
+    // }
+
+
+
     // divs.forEach(function(e) {
     //   e.addEventListener('click', function(evento) {
-    //     if( evento.target.style.background == 'gray none repeat scroll 0% 0%') {
+    //     if( evento.target.style.background == 'gray none  repeat scroll 0% 0%') {
     //       evento.target.style.background = 'plum';
     //     } else {
     //       evento.target.style.background = 'gray';
@@ -38,9 +50,34 @@
     //   // div.style.left = e.clientX + 152+'px';
 
     // })
-    document.body.addEventListener('click', function (e) {
-      console.log(e.target);
-    })
+    // document.body.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    // })
+
+    // var count = 4
+    // document.getElementById('add').addEventListener('click', function(e){
+    //   var nuevoDiv = document.createElement('div')//esto es como hacer <div></div>
+    //   nuevoDiv.setAttribute('class',  count)//agregará un atributo a mi elemento, que será class y será el valor de count---> es lo mismo que <div class = "4"></div>
+    //   //nuevoDiv.setAttribute('id', "cualquiera")
+    //   nuevoDiv.innerText = count //-> <div class = "4">4</div>
+    //   document.body.appendChild(nuevoDiv)//-->que esta haicnedo
+
+    //   /*
+    //   html
+    //     head
+    //     /head
+    //     body
+    //     h1
+    //     p
+    //     <div class = "4">4</div> estoy agregando nuevoDiv y lo agrega justamente al final
+    //     /body
+    //   /html
+      
+    //   */
+    //   //divs=[...divs,nuevoDivs]
+    //   count++;
+      
+    // })
   </script>
 </body>
 
