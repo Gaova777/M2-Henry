@@ -1,6 +1,15 @@
-(function () {
+//(function () {
+  //aunque no es relevante para la taArea, esta linea, lo que nos muestra es, exporta para window que es el marcoprincipal de trabajo una nueva instancia de ese objeto del mismo objeto window donde lo encuentra.
+  //window.whiteboard = new window.EventEmitter();
 
-  window.whiteboard = new window.EventEmitter();
+  /* var EE = require('./event-emitter') // forma clasica*/
+  //var whiteboard = new EE();//estas dos lineas de codigo es la mi //sma que la anterior
+  
+  //con ES6
+  import { EventEmitter } from "./event-emitter";
+  export var whiteboard = new EventEmitter();
+  
+  
 
   // Ultimately, the color of our stroke;
   var color;
@@ -113,4 +122,10 @@
 
   };
 
-})();
+  //module.exports = whiteboard; 
+
+  // ES6 arriba
+
+
+
+//})();

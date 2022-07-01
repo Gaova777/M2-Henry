@@ -1,7 +1,18 @@
-(function () {
+//(function () {
 
-  var whiteboard = window.whiteboard;
-  var socket = window.io(window.location.origin);
+//(1)var whiteboard = window.whiteboard; acá traemos lo que exportamos de whiteboard
+  //var whiteboard = require('./whiteboard')
+
+  //con ES6
+  import { whiteboard } from './whiteboard';
+
+
+//(2)  var socket = window.io(window.location.origin); acá vamos a traernos lo que hay en scoket location, que es un paquete de node
+  // var io = require('socket.io-client')
+
+  //ES6
+  import { io } from 'socket.io-client';
+  var socket = io(window.location.origin)//acá guardamos en una variable la forma de activar el io
 
   socket.on('connect', function () {
     console.log('Connected!');
@@ -26,4 +37,4 @@
     socket.emit('draw', start, end, color);
   });
 
-})();
+//})();

@@ -13,15 +13,18 @@
   <button class='boton'>AJAX!</button>
   <script type="text/javascript">
     var index = 1;
-    $('.boton').click(function () {
+    $('.boton').click(function () { //este "$" es lo mismo que decir document.querySelector(".boton").addEventListenner('click',cb)
       // GET AJAX
-      $.get("https://jsonplaceholder.typicode.com/photos/" + index, function (data) {
+      $.get("https://jsonplaceholder.typicode.com/photos/" + index, function (data) { //acá podemos ver como con el codigo JQuery "$" hacemos una petición tipo get al servidor, yendo hacia el empoint de fotos, con el id = 1, que es la concatenación de la variable index = 1.
+
+      console.log(data)
         // vanilla javascript
-        var img = document.createElement('img');
-        img.src = dataAca.url;
-        var title = document.createElement('h3');
-        title.textContent = dataAca.title;
-        $('#respuesta').append(img);
+        var img = document.createElement('img');//crea el elemento <img>
+        img.src = data.url;//al elemento <img> le agrega un src <img src='https://via.placeholder.com/600/92c952'>
+        var title = document.createElement('h3');//creamos un elemento <h3></h3>
+        title.textContent = data.title;//le asigna al elemento h3 un text--> <h3>accusamus beatae ad facilis cum similique qui sunt</h3>
+        $('#respuesta').append(img);//es equivalente a decir---> document.getElementByid(respuesta)....
+        // accedemos al div con id 'respuesta' y con el append, que es lo mismo que appendchild, donde le agregamos a ese elemento el argumento que queramos
         $('#respuesta').append(title);
         index++;
       });

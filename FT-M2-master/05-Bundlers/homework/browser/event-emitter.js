@@ -1,11 +1,20 @@
-(function () {
+//(function () {
 
   window.EventEmitter = EventEmitter;
 
   // our EventEmitter constructor function
-  function EventEmitter () {
+  /* function EventEmitter () {
+    this.subscribers = {};
+  } //forma clasica
+
+   */
+
+  //con ES6
+
+  export  function EventEmitter () {
     this.subscribers = {};
   }
+
 
   // To be used like:
   // instanceOfEE.on('touchdown', cheerFn);
@@ -43,4 +52,22 @@
 
   };
 
-})();
+  //module.exports = EventEmitter; forma clasica
+
+  // con ES6 estaría solo con export y sha
+
+  //al usar:
+  /*  exports === {a:fun}.....exports.a=funcion
+      exports = funcion //no me va a hacer esto que le indique, simplemente lo ignora y sigue exportando el objetito
+      
+      pero con "module.exports" es alrevez
+
+      module.exports ==={a:fun}...exports.a=funcion
+      module.exports === function, aacá si me envia la funcion y no coje resabios como el otro
+
+
+
+  
+  */
+
+//})();
