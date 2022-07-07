@@ -18,7 +18,7 @@ function DinamicInputs() {
 
   const handlePersonaChange = (e) => setPersona({
     ...persona,
-    [e.target.name]: e.target.value,
+    [e.target.name]: e.target.value, //en el input de abajo del return el e.target --> elemento. evento. name (el name es del mismo input): mas lo que van escribiendo con el onChange
   });
 
   const handleFamiliarChange = (e) => {

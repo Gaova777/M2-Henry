@@ -27,14 +27,14 @@
     handleChange = (e) => {
       this.setState({
         mensaje: e.target.value
-      })
+      })//recordar el e.target, es el elemengo que disparo el evento, esdecir el input
     }
 
     render() {
         return (
             <div>
                 <h1>Bind usando Arrow Function</h1>
-                <input type="text" name="message" placeholder="Ingresa mensaje" onChange={this.handleChange} />
+                <input type="text" name="message" placeholder="Ingresa mensaje" onChange={this.handleChange} />{/* acá onCHange es similar al onClick, pero va a estar pendiente de cambios en el input, es decir, cuando alguien escribe o borra algo en el input, seactiva el onChange */}
                 <button onClick={this.handleClick}>Clickéame</button>
             </div>    
         );

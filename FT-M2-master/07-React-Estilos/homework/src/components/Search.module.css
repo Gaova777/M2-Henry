@@ -1,0 +1,19 @@
+.contenedor input{
+background-color: rgba(65, 65, 65, 0.158);
+border: none;
+border-radius: 5px;
+}
+
+.btn{
+    background-color: rgba(248, 36, 36, 0.466);
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.btn:hover{
+    cursor:pointer;
+    background-color: rgb(2, 2, 2);
+    
+ 
+}

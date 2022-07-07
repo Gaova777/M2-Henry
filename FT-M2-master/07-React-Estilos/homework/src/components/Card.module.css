@@ -1,0 +1,40 @@
+.contenedor{
+border: rgba(0, 0, 0, 0.199) solid 1px;
+border-radius: 5px;
+display:flex;
+flex-direction: column;
+width: 300px;
+height: 174px;
+position: relative/* this helpme to organize the button of the little container, because this is the father o this container */;
+
+}
+
+
+.infoCont{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.infoCont img{
+    background-color: rgba(70, 68, 68, 0.404);
+    border-radius: 5px;
+}
+
+
+.btn{
+height: min-content; /* acá se ajusta al contenido el tamañito */
+width: min-content;
+position: absolute;
+right: 5px;
+top: 5px;
+background-color: rgba(248, 36, 36, 0.466);
+border: none;
+border-radius: 5px;
+color: white;
+}
+
+.btn:hover{
+    cursor:pointer;
+    background-color: rgb(0, 0, 0);
+}

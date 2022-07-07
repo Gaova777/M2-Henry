@@ -1,0 +1,65 @@
+<html>
+
+
+<!-- despues del head, en el body, al colocar el script podríamos usar: -->
+
+
+<script type="text/babel">
+    class StateContador extends React.Component{
+        constructor(props){
+            super(props);
+            this.state = {contador:0} /* otra forma de colocar el estado con un valor */
+            this.clickOne = this.clickOne.bind(this)
+            this.clickTwo = this.clickTwo.bind(this)
+            this.clickThree = this.clickThree.bind(this)
+        }
+
+        clickOne(){
+            this.setState({
+                contador: this.state.contador + 1
+            });
+            
+                this.setState({
+                    contador: this.state.contador + 1
+                });// acá podemos ver que aunque hay la misma operación, el uno no le entrega al otro lo que hizo primero, no. lo que sucede es que uno se demora un poco y no alcanza a terminar su proceso y al pasar al segundo set ni siquiera ha acabado su proceso, entonces los dos van a entregar el mismo valor al console.
+           
+            console.log('sin callback: ', this.state.contador)
+        }
+        clickTwo(){
+            this.setState({
+                contador: this.state.contador + 1
+            }, function(){
+                console.log('Con Callback: ', this.state.contador)
+
+            })
+            //le paso un callback como 2do parámetro al setState
+        }
+        /* podemos observar una diferencia en eficiencia y como al usar los callbacks responden mucho más rapido como se observo en la clase de Fede */
+        clickThree(){
+            this.setState(state => {
+                return {
+                    contador: state.contador + 1
+                }
+            });
+            this.setState(state =>{
+                return {
+                    contador: state.contador +1
+                }
+            });//con clickThree se soluciona lo de clickOne cuando se aplica lo mismo dos veces, pero en este caso usa callbacks donde el uno debe esperar a que el otro termina el proceso
+        } 
+
+        render(){
+            return (
+                <div>
+                <p>{this.state.contador}</p>
+                <button onClick = {this.clickOne}>CLICK ONE</button>
+                <button onClick={this.clickTwo}>CLICK TWO</button>
+                <button onClick={this.clickThree}>CLICK THREE</button>
+                </div>
+
+            )
+        }
+    };
+    ReactDOM.render(<StateContador/>, document.getElementById('app'))
+</script>
+</html>

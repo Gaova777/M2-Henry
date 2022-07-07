@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
+import OtroComponente from './src/components/OtroComponente.js'; 
 import Producto from './src/components/Product.jsx';
-import OtroComponente from './src/components/OtroComponente.js';
 
 render(<div>
     <Producto title="Prueba" price={400}/>

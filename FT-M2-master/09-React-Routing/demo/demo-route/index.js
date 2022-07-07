@@ -66,10 +66,10 @@ const Root = (
       {/* <Route strict path="/strict">
         <h2>Strict</h2>
       </Route> */}
-      {/* <Route exact strict path="/strict">
+      {/* <Route exact strict path="/strict"> 
         <h2>Strict</h2>
       </Route> */}
-      {/* <Route sensitive path="/sensitive">
+      {/* <Route sensitive path="/sensitive">//senstive tiene encuenta mayusculas y minusculas
         <h2>Sensitive</h2>
       </Route>
       <Route sensitive path="/Sensitive">

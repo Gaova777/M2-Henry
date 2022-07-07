@@ -1,0 +1,5 @@
+.contenedor{
+    display: flex;
+    justify-content: space-evenly;/* me deja el mismo espacio entre los elementos y las margenes */
+    
+}

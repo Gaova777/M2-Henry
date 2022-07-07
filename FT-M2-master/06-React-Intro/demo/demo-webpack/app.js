@@ -25,9 +25,9 @@ const musicos = [
 function App() {
   return (
     <div>
-      <Saludo nombre='Soy Henry' lang='en'/>
+      {/*<Saludo nombre='Soy Henry' lang='en'/>*/}
       <SaludoFuncional nombre='Soy Henry' lang='es'/>
-      <Musicos musicos={musicos} />
+    { /*   <Musicos musicos={musicos} />*/}
     </div>
   )
 }

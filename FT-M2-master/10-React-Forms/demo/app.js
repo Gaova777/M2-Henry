@@ -7,5 +7,6 @@ import DynamicInputs from './src/components/DynamicInputs.jsx';
 
 render(<div>
     <h2>Ejemplo</h2>
-    <Ejemplo lang='hun'/>
+    {/* <Ejemplo lang='hun'/> */}
+    <DynamicInputs/>
   </div>, document.getElementById('app'));

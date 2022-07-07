@@ -23,7 +23,7 @@
       render(){
         return (
           <div>
-            <h2>{this.state.title}</h2>
+            <h2>{this.state.title}</h2> {/* esto no sirve si lo colocamos desde el state, ya que el estado cambia al mismo tiempo que en app solo si usamos setState, por lo tanto en este caso, es mejor que react escuche por props entonces, no necesariamente todo debe estar en estados  */}
           </div>
         )
       }
