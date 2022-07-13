@@ -6,10 +6,12 @@ class Counter extends Component {
     // Extra Credit
     incrementIfOdd = () => {
       //Implementar una función de incremento que sólo aumenta si el valor del contador es impar
+      this.props.count % 2 !==0 && this.props.increment() //store.dispatch(increment())
     };
     // Extra Credit
     incrementAsync = () => {
         //  Implementar una función de incremento que aumenta después de esperar un segundo
+      setTimeout(this.props.increment, 1000)
     };
 
     render() {
@@ -18,19 +20,19 @@ class Counter extends Component {
         return (
             <p>
                 Clickeado: {this.props.count} veces
-                <button onClick={() => {/* Completar */ }}>
+                <button onClick={this.props.increment}>
                     + {/* Incremeta */}
                 </button>
-                <button onClick={() => {/* Completar */ }}>
+                <button onClick={this.props.decrement}>
                     -  {/* Decrementa */}
                 </button>
                  {/* Si quieres hacer los extra credit puede descomentar las lineas de abajo */}
-                {/* <button onClick={this.incrementIfOdd}>
+                <button onClick={this.incrementIfOdd}>
                     incrementa si es impar
                 </button>
                 <button onClick={this.incrementAsync}>
                     Incrementa despues de un segundos
-                </button>  */}
+                </button> 
             </p>
         );
     }
@@ -43,7 +45,7 @@ class Counter extends Component {
 // recibiría sólo las partes relevantes que necesita del objeto de estado.
 const mapStateToProps = (state) => {
     return {
-        count: state.count
+        count: state.count//por un lado tenemos el nombre de la propiedad que sería count (lado izquierdo) y por el otro tenemos el valor del state en count que le asignamos al name count
     };
 };
 

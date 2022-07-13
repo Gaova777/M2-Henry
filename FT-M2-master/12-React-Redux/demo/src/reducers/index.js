@@ -1,6 +1,6 @@
 
 const initialState = {
-  count: 0,
+  count: 0, //(reducer, index (1))
   loading: false,
   post: {},
 }

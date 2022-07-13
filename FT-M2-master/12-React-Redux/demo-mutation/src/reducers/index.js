@@ -25,10 +25,11 @@ export default (state = initialState, action) => {
         count: 0,
       }
     case 'ADD_FRIEND':
-      state.amigos.push("Tito");
+      state.amigos.push("Tito");// esta mal, ya que me modifica el estado antiguo, y reacto solo detecta estados nuevos por lo tanto, se modifica el return de la siguiente manera:
       return {
         ...state,
-        amigos: state.amigos
+       // amigos: state.amigos
+       amigos: [...state.amigos, 'Tito']//así modificaríamos el estado a uno nuevo
       };
     default:
       return {...state}
